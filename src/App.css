@@ -1,6 +1,19 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.layout-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh; /* Full viewport height */
+}
+
+.custom-sider {
+  width: 250px; /* Fixed width for the sider */
+  height: 100vh; /* Full viewport height */
+  overflow-y: auto; /* Allow scrolling */
+  position: relative; /* Keep the Sider within the layout flow */
+}
+
+.queue-container {
+  flex: 1; /* Take the remaining space */
+  height: 100vh; /* Full viewport height */
+  padding-left: 260px; /* Space for the fixed sider */
+  overflow-y: auto;
 }
