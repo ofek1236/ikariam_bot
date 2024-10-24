@@ -1,0 +1,25 @@
+.action-item-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .action-item-image-container {
+    text-align: center;
+  }
+  
+  .action-item-image {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .action-item-level {
+    margin-left: auto;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .action-item-button {
+    margin-left: 10px;
+  }
+  
