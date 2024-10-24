@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <Action buildingName={"Academy"} newLevel={6} timeToBuild={"123"} endTime={"1234"}></Action>
+      <Action buildingName={"Academy"} newLevel={6} timeToBuild={"123"} endTime={"12:34"}></Action>
     </>
   )
 }
