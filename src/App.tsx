@@ -14,7 +14,7 @@ const App: React.FC = () => {
   const [componentsList, setComponentsList] = useState<ActionItemProps[]>([
     {name: 'Academy', image: AcademyImage, level: 8, endLevel: 9},
     {name: 'Town Hall', image: TownHallImage, level: 3, endLevel: 4},
-    {name: 'Narracks', image: BarracksImage, level: 4, endLevel: 5},
+    {name: 'Barracks', image: BarracksImage, level: 4, endLevel: 5},
   ]);
   const removeFromQueue = (component: ActionItemProps) => {
     setQueue(
