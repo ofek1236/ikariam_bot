@@ -1,17 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Action from "./components/Action.tsx";
+import React, { useState } from 'react';
+import { Layout } from 'antd';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HeaderMenu from './components/HeaderMenu';
+import CustomSider from './components/ActionQueue/CustomSider';
+import QueueContent from './components/ActionQueue/QueueContent';
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <Action buildingName={"Academy"} newLevel={6} timeToBuild={"123"} endTime={"12:34"}></Action>
-    </>
-  )
+interface ComponentItem {
+  name: string;
+  id: number;
 }
 
-export default App
+const App: React.FC = () => {
+  const [queue, setQueue] = useState<ComponentItem[]>([]);
+
+  const addToQueue = (component: ComponentItem) => {
+    setQueue([...queue, component]);
+  };
+
+  return (
+    <Router>
+      <Layout>
+        <HeaderMenu />
+        <Layout>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <CustomSider addToQueue={addToQueue} />
+                  <QueueContent queue={queue} />
+                </>
+              }
+            />
+            <Route path="/page2" element={<div>Content for Page 2</div>} />
+            <Route path="/page3" element={<div>Content for Page 3</div>} />
+          </Routes>
+        </Layout>
+      </Layout>
+    </Router>
+  );
+};
+
+export default App;
