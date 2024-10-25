@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, List } from 'antd';
 import ActionItem from './ActionItem';
-
+import AcademyImage from '../../assets/buildings/academy.png'
 const { Sider } = Layout;
 
 interface ComponentItem {
@@ -17,9 +17,9 @@ interface SiderProps {
 }
 
 const componentsList: ComponentItem[] = [
-  { name: 'Component 1', id: 1, data: 'Data 1', image: 'https://via.placeholder.com/50', level: '2 → 3' },
-  { name: 'Component 2', id: 2, data: 'Data 2', image: 'https://via.placeholder.com/50', level: '3 → 4' },
-  { name: 'Component 3', id: 3, data: 'Data 3', image: 'https://via.placeholder.com/50', level: '4 → 5' },
+  { name: 'Academy', id: 1, data: 'Data 1', image: AcademyImage, level: '2 → 3' },
+  { name: 'Barracks', id: 2, data: 'Data 2', image: AcademyImage, level: '3 → 4' },
+  { name: 'Town Hall', id: 3, data: 'Data 3', image: AcademyImage, level: '4 → 5' },
 ];
 
 const CustomSider: React.FC<SiderProps> = ({ addToQueue }) => {
