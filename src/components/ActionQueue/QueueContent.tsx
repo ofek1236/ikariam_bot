@@ -2,17 +2,15 @@ import React from 'react';
 import { Layout, List, Space } from 'antd';
 import '../../css/QueueContent/QueueContent.css';
 import { CloseOutlined } from '@ant-design/icons';
+import ActionItemProps from "../../interfaces/ActionItemPropsInterface.tsx";
+import ActionItem from "./ActionItem.tsx";
 
 const { Content } = Layout;
 
-interface ComponentItem {
-  name: string;
-  id: number;
-}
 
 interface QueueContentProps {
-  queue: ComponentItem[];
-  removeFromQueue: (component: ComponentItem) => void;
+  queue: ActionItemProps[];
+  removeFromQueue: (component: ActionItemProps) => void;
 }
 
 const QueueContent: React.FC<QueueContentProps> = ({ queue, removeFromQueue }) => {
@@ -25,7 +23,8 @@ const QueueContent: React.FC<QueueContentProps> = ({ queue, removeFromQueue }) =
           renderItem={(item) => (
             <List.Item>
               <Space size="large">
-                <div>{item.name}</div>
+                  <ActionItem name={item.name} image={item.image} level={item.level}></ActionItem>
+
                 <CloseOutlined
                   onClick={() => {
                     removeFromQueue(item);
