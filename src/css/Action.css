@@ -6,19 +6,24 @@
     align-items: center;
     align-content: center;
     background-color: peachpuff;
-    height: 200px;
+    height:100px;
     gap: 10px;
     padding: 5px;
     border-radius: 25px;
     border: solid black;
 
 }
+.ActionImageContainer img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 200px;
+}
 .ActionSeparator {
     background-color: black;  /* Set the color of the line */
     /* Optional: Add horizontal spacing if needed */
     border: solid black;
     height: 100%;
-    align-self: stretch;      /* Make sure the separator stretches to fit */
     border-radius: 25px;
 
 }
