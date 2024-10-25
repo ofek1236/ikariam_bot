@@ -1,0 +1,14 @@
+.ant-list-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+h2 {
+  text-align: center;
+}
+
+.ant-list-items > .ant-list-item {
+  flex: 100%;
+  justify-content: center;
+}

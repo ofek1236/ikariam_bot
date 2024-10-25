@@ -13,6 +13,9 @@ interface ComponentItem {
 const App: React.FC = () => {
   const [queue, setQueue] = useState<ComponentItem[]>([]);
 
+  const removeFromQueue = (component: ComponentItem) => {
+    setQueue(queue.filter((item) => item !== component));
+  };
   const addToQueue = (component: ComponentItem) => {
     setQueue([...queue, component]);
   };
@@ -28,7 +31,7 @@ const App: React.FC = () => {
               element={
                 <>
                   <CustomSider addToQueue={addToQueue} />
-                  <QueueContent queue={queue} />
+                  <QueueContent queue={queue} removeFromQueue={removeFromQueue} />
                 </>
               }
             />
