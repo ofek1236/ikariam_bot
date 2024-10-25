@@ -1,4 +1,3 @@
-import React from 'react';
 import {RightOutlined} from "@ant-design/icons";
 import AcademyImage from '../assets/buildings/academy.png';
 import '../css/Action.css';

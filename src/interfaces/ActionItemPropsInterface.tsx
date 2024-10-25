@@ -2,7 +2,7 @@ interface ActionItemProps {
     name: string;
     image: string;
     level: string;
-    onAdd: () => void;
+    onAdd?: () => void;
 }
 
 export default ActionItemProps;

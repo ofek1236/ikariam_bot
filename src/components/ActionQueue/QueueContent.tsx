@@ -24,7 +24,6 @@ const QueueContent: React.FC<QueueContentProps> = ({ queue, removeFromQueue }) =
             <List.Item>
               <Space size="large">
                   <ActionItem name={item.name} image={item.image} level={item.level}></ActionItem>
-
                 <CloseOutlined
                   onClick={() => {
                     removeFromQueue(item);
