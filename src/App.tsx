@@ -4,19 +4,15 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HeaderMenu from './components/HeaderMenu';
 import CustomSider from './components/ActionQueue/CustomSider';
 import QueueContent from './components/ActionQueue/QueueContent';
-
-interface ComponentItem {
-  name: string;
-  id: number;
-}
+import ActionItemProps from "../../interfaces/ActionItemPropsInterface.tsx";
 
 const App: React.FC = () => {
-  const [queue, setQueue] = useState<ComponentItem[]>([]);
+  const [queue, setQueue] = useState<ActionItemProps[]>([]);
 
-  const removeFromQueue = (component: ComponentItem) => {
+  const removeFromQueue = (component: ActionItemProps) => {
     setQueue(queue.filter((item) => item !== component));
   };
-  const addToQueue = (component: ComponentItem) => {
+  const addToQueue = (component: ActionItemProps) => {
     setQueue([...queue, component]);
   };
 
