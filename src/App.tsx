@@ -14,7 +14,7 @@ const App: React.FC = () => {
   const [queue, setQueue] = useState<ComponentItem[]>([]);
 
   const removeFromQueue = (component: ComponentItem) => {
-    setQueue(queue.filter((item) => item !== component));
+    setQueue(queue.filter((item) => item.id !== component.id));
   };
   const addToQueue = (component: ComponentItem) => {
     setQueue([...queue, component]);
