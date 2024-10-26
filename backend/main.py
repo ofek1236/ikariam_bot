@@ -7,10 +7,20 @@ from pydantic import BaseModel, Field
 from bson import ObjectId
 import logging
 from models import BuildingInput, BuildingResponse, Event, PyObjectId, BuildingUpdate, Queue
+from fastapi.middleware.cors import CORSMiddleware
+
 
 logging.basicConfig(level=logging.INFO)  # Adjust the level if needed (e.g., DEBUG, WARNING, ERROR)
 logger = logging.getLogger(__name__)
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # Change this to your React app's URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # MongoDB connection
 DB_USER = "db_user"
