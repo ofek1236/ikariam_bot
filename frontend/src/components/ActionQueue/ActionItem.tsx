@@ -4,7 +4,7 @@ import '../../css/ActionQueue/ActionItem.css';
 import ActionItemProps from "../../interfaces/ActionItemPropsInterface.tsx";
 
 
-const ActionItem: React.FC<ActionItemProps> = ({name, image, level, onAdd}) => {
+const ActionItem: React.FC<ActionItemProps> = ({name, image, level, endLevel, onAdd}) => {
     return (
         <div className="action-item-container">
             {/* Image with name underneath */}
@@ -14,7 +14,7 @@ const ActionItem: React.FC<ActionItemProps> = ({name, image, level, onAdd}) => {
             </div>
 
             {/* Level indicator on the right */}
-            <div className="action-item-level">{level}</div>
+            <div className="action-item-level">{level} → {endLevel}</div>
 
             {/* Button to add to the queue */}
             {onAdd && (<Button className="action-item-button" onClick={onAdd}>

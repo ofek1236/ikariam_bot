@@ -23,8 +23,7 @@ const QueueContent: React.FC<QueueContentProps> = ({ queue, removeFromQueue }) =
           renderItem={(item) => (
             <List.Item>
               <Space size="large">
-                  <ActionItem name={item.name} image={item.image} level={item.level}></ActionItem>
-
+                  <ActionItem name={item.name} image={item.image} level={item.level} endLevel={item.endLevel}></ActionItem>
                 <CloseOutlined
                   onClick={() => {
                     removeFromQueue(item);
