@@ -22,4 +22,10 @@
   .action-item-button {
     margin-left: 10px;
   }
+.sider {
+  overflow: auto;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+}
   

@@ -2,7 +2,7 @@ import React from 'react';
 import {Layout, List} from 'antd';
 import ActionItem from './ActionItem';
 import ActionItemProps from "../../interfaces/ActionItemPropsInterface.tsx";
-
+import '../../css/ActionQueue/ActionItem.css';
 const {Sider} = Layout;
 
 
@@ -13,7 +13,7 @@ interface SiderProps {
 
 const CustomSider: React.FC<SiderProps> = ({addToQueue, componentsList}) => {
     return (
-        <Sider width={250} style={{overflow: 'auto', height: '100vh', position: 'fixed', left: 0}}>
+        <Sider width={250} className={"sider"}>
             <List
                 dataSource={componentsList}
                 renderItem={(item) => (
