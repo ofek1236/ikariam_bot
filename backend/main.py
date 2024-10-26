@@ -147,8 +147,3 @@ def create_queue_event(queue_username: str, event: Event):
     # Optionally return the updated queue
     updated_queue = db['queues'].find_one({"username": queue_username})
     return updated_queue
-
-
-@app.get("/events/", response_model=List[Event])
-def get_all_events():
-    return list(db['events'].find())
