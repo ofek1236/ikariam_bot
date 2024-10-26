@@ -39,7 +39,7 @@ class BuildingResponse(BaseModel):
     name: str
     level: int
     wood: Optional[int] = 0
-    marbel: Optional[int] = 0
+    marble: Optional[int] = 0
     sulphur: Optional[int] = 0
     crystal: Optional[int] = 0
 
