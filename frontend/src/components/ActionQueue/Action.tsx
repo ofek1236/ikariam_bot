@@ -3,7 +3,7 @@ import AcademyImage from '../assets/buildings/academy.png';
 import '../css/Action.css';
 
 type ActionProps = {
-    buildingName: string;
+    buildingName: string
     newLevel: number;
     timeToBuild: string;
     endTime: string;
