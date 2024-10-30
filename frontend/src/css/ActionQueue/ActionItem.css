@@ -1,31 +1,65 @@
 .action-item-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .action-item-image-container {
-    text-align: center;
-  }
-  
-  .action-item-image {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .action-item-level {
-    margin-left: auto;
-    font-weight: bold;
-    font-size: 16px;
-  }
-  
-  .action-item-button {
-    margin-left: 10px;
-  }
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #f0f4ff; /* Light background color for better contrast */
+  border: 1px solid #d0d7e5; /* Light border color for a clean look */
+  border-radius: 8px;
+  padding: 16px;
+  margin-right: 10px;
+  margin-left: 10px;
+  max-width: 300px; /* Adjust width as needed */
+  color: #2c3e50; /* Darker color for text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: transform 0.2s ease;
+}
+
+.action-item-container:hover {
+  transform: scale(1.02); /* Slightly larger on hover */
+}
+
+.action-item-image-container {
+  text-align: center;
+  margin-right: 16px; /* Spacing between image and text */
+}
+
+.action-item-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Circular image style */
+}
+
+.action-item-name {
+  font-weight: bold;
+  font-size: 1em;
+  margin-top: 8px;
+}
+
+.action-item-level {
+  margin-left: auto;
+  font-weight: bold;
+  font-size: 16px;
+  color: #34495e; /* Subtle color for level indicator */
+}
+
+.action-item-button {
+  margin-left: 10px;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.action-item-button:hover {
+  background-color: #357ab8;
+}
+
 .sider {
   overflow: auto;
   height: 100vh;
   position: fixed;
   left: 0;
 }
-  

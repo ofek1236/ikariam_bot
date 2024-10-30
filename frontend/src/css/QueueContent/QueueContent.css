@@ -6,6 +6,7 @@
 
 h2 {
   text-align: center;
+  text-decoration: underline;
 }
 
 .ant-list-items > .ant-list-item {
