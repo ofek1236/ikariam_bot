@@ -17,7 +17,7 @@ install:
 
 run-frontend:
 	# Run Vite server in frontend directory
-	cd $(FRONTEND_DIR) && npm run dev --no-open
+	cd $(FRONTEND_DIR) && npm run dev
 
 run-backend:
 	# Activate virtual environment under backend/ and start Uvicorn server
