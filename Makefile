@@ -1,7 +1,7 @@
 # Paths
 FRONTEND_DIR = frontend
 BACKEND_DIR = backend
-VENV_DIR = $(BACKEND_DIR)/venv
+VENV_DIR = venv
 
 # Commands
 install:
@@ -14,6 +14,11 @@ install:
 	# Create a Python virtual environment under backend/ and install backend requirements
 	python3.11 -m virtualenv $(VENV_DIR)
 	$(VENV_DIR)/bin/pip install -r $(BACKEND_DIR)/requirements.txt
+
+lint:
+	ruff check .  # Run ruff for linting
+	black --check .  # Run black to check formatting
+	mypy .  # Run mypy for type checking
 
 run-frontend:
 	# Run Vite server in frontend directory

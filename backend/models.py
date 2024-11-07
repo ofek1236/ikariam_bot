@@ -1,18 +1,11 @@
-from pydantic import BaseModel, Field, BeforeValidator
+from pydantic import BaseModel
 from bson import ObjectId
-from typing import Optional, List, Annotated
+from typing import Optional, Dict, List
 
-# Custom ObjectId type for Pydantic
-PyObjectId = Annotated[str, BeforeValidator(str)]
 
 class Event(BaseModel):
     building_name: str
-    start_level: int
-    end_level: int
-
-class Queue(BaseModel):
-    username: str
-    events: Optional[List[Event]] = []
+    level: int
 
 
 class BuildingInput(BaseModel):
@@ -22,20 +15,9 @@ class BuildingInput(BaseModel):
     marbel: Optional[int]
     sulphur: Optional[int]
     crystal: Optional[int]
-    # events: List[Event] = []
 
-class BuildingUpdate(BaseModel):
-    name: Optional[str] = None
-    level: Optional[int] = None
-    wood: Optional[int] = None
-    marbel: Optional[int] = None
-    sulphur: Optional[int] = None
-    crystal: Optional[int] = None
-    # events: Optional[List[Event]] = None
 
-# Model with alias for response
 class BuildingResponse(BaseModel):
-    id: Optional[PyObjectId] = Field(alias="_id", default=None)
     name: str
     level: int
     wood: Optional[int] = 0
@@ -45,4 +27,18 @@ class BuildingResponse(BaseModel):
 
     class Config:
         allow_population_by_field_name = True  # Allow input by alias or original name
-        json_encoders = {ObjectId: str}        # Encode ObjectId as a string in JSON
+        json_encoders = {ObjectId: str}  # Encode ObjectId as a string in JSON
+
+
+class BuildingUpdate(BaseModel):
+    name: Optional[str] = None
+    level: Optional[int] = None
+    wood: Optional[int] = None
+    marbel: Optional[int] = None
+    sulphur: Optional[int] = None
+    crystal: Optional[int] = None
+
+
+class Queue(BaseModel):
+    username: str
+    events: Dict[str, Optional[List[BuildingResponse]]] = {}
