@@ -26,7 +26,7 @@ run-frontend:
 
 run-backend:
 	# Activate virtual environment under backend/ and start Uvicorn server
-	. $(VENV_DIR)/bin/activate && cd $(BACKEND_DIR) && uvicorn main:app --reload --port 8000 --log-level debug
+	. $(VENV_DIR)/bin/activate && cd $(BACKEND_DIR) && uvicorn router:app --reload --port 8000 --log-level debug
 
 run:
 	# Run both frontend and backend concurrently - TODO run in containers
